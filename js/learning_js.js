@@ -1,39 +1,32 @@
-// 定数の値は省略できない
-/* const noValue1;
-console.log(noValue1); */
-// 値を代入
-/* noValue1 = 1;
-console.log(noValue1); */
+// 配列
+const MEMBERS = ['リラックマ', 'コリラックマ', 'キイロイトリ', 'チャイロイコグマ'];
+console.log(MEMBERS);
+MEMBERS[4] = 'コウペンちゃん';
+console.log(MEMBERS);
+MEMBERS[4] = 'フミマール';
+console.log(MEMBERS);
 
-// 数値を代入
-const number1 = 7;
-const number2 = 10;
-console.log(number1 + number2);
-// 値の再代入
-/* number2 = 20; 
-console.log(number1 + number2); */
+// オブジェクト
+const MENUS = {curry: 900, udon: 650, pasta: 950};
+console.log(MENUS);
+MENUS.udon = 700;
+console.log(MENUS);
 
-// 文字列
-const nickname = 'fumima-ru';
-console.log(`ニックネーム：${nickname}`);
-// 文字列の値を結合
-const introduction = 'ニックネームは';
-console.log(introduction + nickname);
+// オブジェクトを要素に持つ配列
+const SWEETS = [
+  {name: 'ohagi', price: 280, category: "和菓子"},
+  {name: 'zenzai', price: 480, category: "和菓子"},
+  {name: 'cake', price: 500, category: "洋菓子"},
+  {name: 'parfait', price: 1400, category: "洋菓子"}
+];
+SWEETS[0].price = 300;
+console.log(SWEETS);
+console.log(SWEETS[2]);
+console.log(SWEETS[0].price);
+console.log(SWEETS[3].category);
 
-
-// 日付
-const currentDate  = new Date();
-console.log(currentDate);
-
-// 関数
-const greetFunction = () => console.log('こんにちは');
-greetFunction();
-
-// 定数を定数に代入
-const value1 = 100;
-const value2 = value1 + value1;
-console.log(value1, value2);
-
-// 定数をまとめて宣言する
-const a = 1 , b = 2 , c = 3;
-console.log(a, b, c);
+// 配列とfor文
+for (let indexNumber = 0; indexNumber < SWEETS.length; indexNumber++) {
+  const SWEET = SWEETS[indexNumber];
+  console.log(`${SWEET.name}は${SWEET.category}で${SWEET.price}円です`);
+}
