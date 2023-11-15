@@ -1,37 +1,47 @@
-// １：アロー関数
-const CALC_SUM = (a, b, c) => {
-  const result = a + b + c;
-  return result;
+// アロー関数
+const F1 = number => number + 1;
+console.log(F1(1));
+
+
+const F2 = (number1, number2, number3) => number1 + number2 + number3;
+console.log(F2(1, 2, 3));
+
+
+const F3 = () => console.log('引数がない場合は()が必要');
+F3();
+
+
+const F4 = () => {
+  return 4;
+  console.log(`return後の処理は実行されない`);
 }
-console.log(CALC_SUM(1, 2, 3));
+console.log(F4());
 
 
-// ２：引数が1つの場合は()を省略できる
-const OMITTING_PARENTHESES_1 = (a) => {
-  return a + 2;
+const F5 = (number1, number2) => {
+  if (number1 > 100) {
+    return number1;
+  }
+  return number2;
 }
-const OMITTING_PARENTHESES_2 = a => {
-  return a + 3;
+console.log(F5(70,200));
+
+
+const F6 = (number1, number2, number3) => {
+  if (number1 > 100) {
+    return number1;
+  } else if (number2 > 150) {
+    return number2;
+    console.log(`値を返すとその後の処理は実行されない`);
+  } else {
+    return number3;
+  }
 }
-console.log(OMITTING_PARENTHESES_1(2));
-console.log(OMITTING_PARENTHESES_2(3));
+console.log(F6(70, 170, 270));
 
 
-// ３：処理が１行の時は{}とreturnを省略できる
-const OMITTING_CURLY_BRACKETS_AND_RETURN_1 = (b) => {
-  return b + 4;
+const F7 = number => {
+  const F8 = 8;
+  return number * F8;
 }
-console.log(OMITTING_CURLY_BRACKETS_AND_RETURN_1(4));
-
-const OMITTING_CURLY_BRACKETS_AND_RETURN_2 = (b) => b + 5;
-console.log(OMITTING_CURLY_BRACKETS_AND_RETURN_2(5));
-
-
-// ４：引数が1つかつ処理が１行なので(),{},returnを省略してみる
-const TWO_AND_THREE = c => c + 6;
-console.log(TWO_AND_THREE(6));
-
-
-// ５：console.log
-const TEST_5 = d => console.log(d + 7);
-TEST_5(7);
+console.log(F7(7));
