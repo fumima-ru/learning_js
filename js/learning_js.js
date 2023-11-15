@@ -1,63 +1,37 @@
-// 関数
-function f1(number) {
-  const RESULT = number + 1;
-  return RESULT; 
+// １：アロー関数
+const CALC_SUM = (a, b, c) => {
+  const result = a + b + c;
+  return result;
 }
-console.log(`f1:${f1(1)}`);
+console.log(CALC_SUM(1, 2, 3));
 
-function f2(number1,number2,number3) {
-  const RESULT = number1 + number2 + number3;
-  return RESULT;
-}
-console.log(`f2:${f2(1, 2, 3)}`);
 
-// 引数のない関数
-function f3() {
-  console.log('f3:引数のない関数');
-  return 3;
+// ２：引数が1つの場合は()を省略できる
+const OMITTING_PARENTHESES_1 = (a) => {
+  return a + 2;
 }
-f3();
-console.log(`f3:${f3()}`);
+const OMITTING_PARENTHESES_2 = a => {
+  return a + 3;
+}
+console.log(OMITTING_PARENTHESES_1(2));
+console.log(OMITTING_PARENTHESES_2(3));
 
-// 戻り値(return)のない関数
-function f4() {
-  console.log('f4:戻り値(return)のない関数');
-}
-f4();
 
-// return後の処理は実行されない
-function f5() {
-  return 5;
-  console.log('return後の処理は実行されない');
+// ３：処理が１行の時は{}とreturnを省略できる
+const OMITTING_CURLY_BRACKETS_AND_RETURN_1 = (b) => {
+  return b + 4;
 }
-console.log(`f5:${f5()}`);
+console.log(OMITTING_CURLY_BRACKETS_AND_RETURN_1(4));
 
-// returnは複数 記述できる
-function f6(number1, number2) {
-  if (number1 > 100) {
-    return number1;
-  }
-  return number2;
-}
-console.log(`f6:${f6(60, 160)}`);
+const OMITTING_CURLY_BRACKETS_AND_RETURN_2 = (b) => b + 5;
+console.log(OMITTING_CURLY_BRACKETS_AND_RETURN_2(5));
 
-// returnは複数 記述できるが値を返すとその後の処理は実行されない
-function f7(number1, number2, number3) {
-  if (number1 > 100) {
-    return number1;
-  } else if (number2 > 150) {
-    return number2;
-    console.log('値を返すとその後の処理は実行されない');
-  } else {
-    return number3;
-  }
-}
-console.log(`f7:${f7(70, 170, 270)}`);
 
-// 戻り値を定数に代入する
-function f8(number1, number2) {
-  const RESULT = number1 * number2;
-  return RESULT;
-}
-const F8_RESULT = f8(8, 10);
-console.log(`f8:${F8_RESULT}`);
+// ４：引数が1つかつ処理が１行なので(),{},returnを省略してみる
+const TWO_AND_THREE = c => c + 6;
+console.log(TWO_AND_THREE(6));
+
+
+// ５：console.log
+const TEST_5 = d => console.log(d + 7);
+TEST_5(7);
