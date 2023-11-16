@@ -1,47 +1,24 @@
-// アロー関数
-const F1 = number => number + 1;
-console.log(F1(1));
+/** JSDocコメント(１行の場合) */
 
+// JSDocコメントとは注釈(アノテーション)を追加するためのマークアップ言語
 
-const F2 = (number1, number2, number3) => number1 + number2 + number3;
-console.log(F2(1, 2, 3));
+// 関数名については出来るだけテンプレートを使用しJSDocコメントを分かりやすくした方が 関数名を考える手間が減って時短できそう
 
-
-const F3 = () => console.log('引数がない場合は()が必要');
-F3();
-
-
-const F4 = () => {
-  return 4;
-  console.log(`return後の処理は実行されない`);
+// 下記は複数行のJSDocコメント
+/**
+ * 税込みの値段を返す関数
+ * @param price 価格
+ * @param tax 税率
+ */
+function calcFunction(price, tax = 0.08) {
+  const RESULT = price + price * tax;
+  return RESULT;
 }
-console.log(F4());
 
+// taxの引数を省略すると初期値の 0.08 が使用される
+const RESULT_1 = calcFunction(100);
+console.log(RESULT_1);
 
-const F5 = (number1, number2) => {
-  if (number1 > 100) {
-    return number1;
-  }
-  return number2;
-}
-console.log(F5(70,200));
-
-
-const F6 = (number1, number2, number3) => {
-  if (number1 > 100) {
-    return number1;
-  } else if (number2 > 150) {
-    return number2;
-    console.log(`値を返すとその後の処理は実行されない`);
-  } else {
-    return number3;
-  }
-}
-console.log(F6(70, 170, 270));
-
-
-const F7 = number => {
-  const F8 = 8;
-  return number * F8;
-}
-console.log(F7(7));
+// taxの引数を指定すると その値が使用される
+const RESULT_2 = calcFunction(100, 0.1);
+console.log(RESULT_2);
