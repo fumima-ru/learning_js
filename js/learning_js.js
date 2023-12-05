@@ -1,21 +1,27 @@
-const FRUIT = {
-  name:'柿',
-  color:'橙色',
-  season: '秋',
-  variety: {
-    variety1: '富有柿',
-    variety2: '次郎柿',
-    variety3: '筆柿',
-    variety4:'紀の川柿',
-    variety5: '西条柿'
+console.log('【f1】');
+function f1(flagA) {
+  for (let index = 0; index < 10; index++) {
+    if (flagA === true) {
+      if (index % 2 !== 0) {
+        console.log(index);
+      } 
+    }
   }
-};
+}
 
-// Object.keys(obj)
-console.log(Object.keys(FRUIT));
+f1(true);
 
-// Object.values(obj)
-console.log(Object.values(FRUIT));
+console.log('【f2】');
+function f2(flagB) {
+  for (let index = 0; index < 10; index++) {
+    if (flagB === false) {
+      continue;
+    }
+    if (index % 2 === 0) {
+      continue;
+    } 
+    console.log(index);
+  }
+}
 
-// Object.entries(obj)
-console.log(Object.entries(FRUIT));
+f2(true);
