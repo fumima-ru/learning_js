@@ -1,27 +1,11 @@
-console.log('【f1】');
-function f1(flagA) {
-  for (let index = 0; index < 10; index++) {
-    if (flagA === true) {
-      if (index % 2 !== 0) {
-        console.log(index);
-      } 
-    }
-  }
-}
+// jQuery readyイベント
+$(document).ready(function() {
+  console.log('HTML(DOM)の読み込みが完了したので処理を開始します');
+});
 
-f1(true);
+// jQuery readyイベント省略形
+$(function() {
+  console.log('HTML(DOM)の読み込みが完了したので処理を開始します');
+});
 
-console.log('【f2】');
-function f2(flagB) {
-  for (let index = 0; index < 10; index++) {
-    if (flagB === false) {
-      continue;
-    }
-    if (index % 2 === 0) {
-      continue;
-    } 
-    console.log(index);
-  }
-}
-
-f2(true);
+// 通常はHTML(DOM)読み込み完了後に1度だけ発生させる
