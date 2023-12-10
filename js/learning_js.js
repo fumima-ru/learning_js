@@ -1,5 +1,20 @@
-// JavaScript DOMContentLoadedイベント
-document.addEventListener('DOMContentLoaded', function() {
-  // HTML(DOM)の読み込みが完了した際の処理
-  console.log('HTML(DOM)の読み込みが完了したので処理を開始します');
+// loadイベント
+// すべてのリソースを読み込んだ後に指定した関数を実行する
+
+// JavaScript
+window.onload = function() {
+  // すべてのリソースが読み込まれた後に実行される
+  console.log("すべてのリソースが読み込まれました。");
+};
+
+// jQuery
+$(window).on('load', function() {
+  // すべてのリソースが読み込まれた後に実行される
+  console.log("すべてのリソースが読み込まれました。");
 });
+
+/* すべてのリソースとは
+HTMLファイル,CSSスタイルシート,JavaScriptファイル,画像ファイル,フォントファイル,動画・音声ファイルなど
+Webページが表示されるために必要な全てのファイルやデータを指す */
+
+/* 上記のwindowの部分は特定の画像など対象の要素を指定することも出来る */
