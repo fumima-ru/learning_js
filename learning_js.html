@@ -5,13 +5,12 @@
     <title>js学習</title>
     <meta name="description" content="サイトの説明">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="img/favicon.ico">
+    <!-- <link rel="shortcut icon" href="img/favicon.ico"> -->
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
 
     <!-- slickのCSS slickを入れる場合に記述-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
-
 
     <!--Google Fonts設定-->
     <link rel=link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,31 +28,57 @@
     <!--(CDNを経由する方法であればjQueryをダウンロードする必要がない　バージョンが変わることがあるので注意すること)-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!--jsファイル読み込み--（すべてのjsファイルを読み込む書いた順に実行される意識を持つこと）-->  
-    <script src="js/learning_js.js" defer></script>
+    <!-- <script src="js/learning_js.js" defer></script> -->
   </head>
 
   <body>
-    <!--#header-------------------------->
+
+    <!--#header---------------------------->
     <header id="header">
       <div class="logo">
         <a href="#"></a>
       </div>
     </header>
 
-    <!--.container----------------------->
-    <div class="container">
       <!--main----------------------------->
       <main>
-        <div class="fetch-test">
-          <h2>fetchテスト</h2>
-          <p>GitHub上でコードを変更</p>
+        <div id="container-1">
+          <h1 id="heading-1"></h1>
+          <p id="paragraph-1"></p>
+          <button id="button-1">PUSH</button>
         </div>
       </main>
       
-      <!--#footer-------------------------->
+      <!--#footer--------------------------->
       <footer id="footer" class="wrapper">
         <p class="copyright">&copy; fumima_ru</p>
       </footer>
-    </div>
+
+      <!--JavaScript------------------------>
+      <script>
+        // addEventListener()メソッド
+        // 指定したイベントが発生した際に特定の関数(イベントリスナー)を呼び出す
+        // DOMContentLoadedイベント
+        // HTML(DOM) の読み込み完了後に処理を開始する
+        document.addEventListener('DOMContentLoaded', function () {
+          // getElementById( )メソッドを使用して各要素を取得
+          let containerElement = document.getElementById('container-1');
+          let headingElement = document.getElementById('heading-1');
+          let paragraphElement = document.getElementById('paragraph-1');
+          let buttonElement = document.getElementById('button-1');
+
+          // 各要素に対して操作や変更を行う
+          containerElement.style.border = '2px solid #eb6100';
+          headingElement.textContent = 'getElementById( )メソッド';
+          paragraphElement.textContent = '下記のボタンをクリックしてください';
+          buttonElement.style.backgroundColor = '#eb6100';
+
+          console.log(containerElement);
+          console.log(headingElement);
+          console.log(paragraphElement);
+          console.log(buttonElement);
+        });
+      </script>
+
   </body>
 </html>
