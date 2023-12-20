@@ -56,28 +56,26 @@
 
       <!--JavaScript------------------------>
       <script>
-        // addEventListener()メソッド
-        // 指定したイベントが発生した際に特定の関数(イベントリスナー)を呼び出す
-        // DOMContentLoadedイベント
-        // HTML(DOM) の読み込み完了後に処理を開始する
-        document.addEventListener('DOMContentLoaded', function () {
-          // getElementById( )メソッドを使用して各要素を取得
-          let containerElement = document.getElementById('container-1');
-          let headingElement = document.getElementById('heading-1');
-          let paragraphElement = document.getElementById('paragraph-1');
-          let buttonElement = document.getElementById('button-1');
+        // 定数に値を代入する
+        const STRING = '7';
+        const NUMBER = 7;
+        const CONTAINS_NON_NUMERIC = '10度';
 
-          // 各要素に対して操作や変更を行う
-          containerElement.style.border = '2px solid #eb6100';
-          headingElement.textContent = 'getElementById( )メソッド';
-          paragraphElement.textContent = '下記のボタンをクリックしてください';
-          buttonElement.style.backgroundColor = '#eb6100';
+        // typeof演算子でデータ型を確認
+        console.log(typeof(STRING));
+        console.log(typeof(NUMBER));
+        console.log(typeof(CONTAINS_NON_NUMERIC));
 
-          console.log(containerElement);
-          console.log(headingElement);
-          console.log(paragraphElement);
-          console.log(buttonElement);
-        });
+        // parseFloat( )関数で文字列を浮動小数点数に変換しデータ型を確認
+        console.log(typeof(parseFloat(STRING)));
+
+        // 数値が渡された場合は文字列に変換した後に浮動小数点数に変換される
+        // (parseFloat( )関数の引数は基本的には文字列が渡される)
+        console.log(typeof(parseFloat(NUMBER)));
+
+        // 非数値の部分がある場合 変換を停止しその時点での数値が返される
+        console.log(typeof(parseFloat(CONTAINS_NON_NUMERIC)));
+        console.log(parseFloat(CONTAINS_NON_NUMERIC));
       </script>
 
   </body>
