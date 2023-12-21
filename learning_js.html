@@ -56,26 +56,41 @@
 
       <!--JavaScript------------------------>
       <script>
-        // 定数に値を代入する
-        const STRING = '7';
-        const NUMBER = 7;
-        const CONTAINS_NON_NUMERIC = '10度';
+        
+        // JavaScriptはプロトタイプベースのオブジェクト指向言語
 
-        // typeof演算子でデータ型を確認
-        console.log(typeof(STRING));
-        console.log(typeof(NUMBER));
-        console.log(typeof(CONTAINS_NON_NUMERIC));
+        /* プロトタイプベースのオブジェクト指向とは
+        ・既存のオブジェクトから新しいオブジェクトを生成するという考え方 */
 
-        // parseFloat( )関数で文字列を浮動小数点数に変換しデータ型を確認
-        console.log(typeof(parseFloat(STRING)));
+        /* Object.prototype
+        ・ほぼ全てのオブジェクトが共有する基本的なプロトタイプオブジェクト
+        ・新しいオブジェクトを生成した際などに雛形のような役割もする */
 
-        // 数値が渡された場合は文字列に変換した後に浮動小数点数に変換される
-        // (parseFloat( )関数の引数は基本的には文字列が渡される)
-        console.log(typeof(parseFloat(NUMBER)));
+        /* Object.getOwnPropertyNames()メソッド
+        ・指定されたオブジェクトの列挙可能なプロパティ名を配列で取得する
+        ・列挙可能なプロパティ・・・for_in文で取得できるプロパティ */
 
-        // 非数値の部分がある場合 変換を停止しその時点での数値が返される
-        console.log(typeof(parseFloat(CONTAINS_NON_NUMERIC)));
-        console.log(parseFloat(CONTAINS_NON_NUMERIC));
+        /* Object.getPrototypeOf()メソッド
+        ・指定したオブジェクトのプロトタイプを取得する
+        ・プロトタイプ・・・他のオブジェクトから継承されるプロパティやメソッドのセット */
+
+        // 新しいオブジェクトを生成
+        const MAKING_OBJECT = Object.create(Object.prototype);
+        
+        // 新しいオブジェクトに任意のプロパティを追加
+        MAKING_OBJECT.name = 'フミマール';
+        MAKING_OBJECT.address = '大阪市';
+
+        // 新しいオブジェクトのプロパティをコンソールに出力
+        console.log(MAKING_OBJECT.name);
+        console.log(MAKING_OBJECT.address);
+
+        // 列挙可能なプロパティ名を配列で取得する
+        console.log(Object.getOwnPropertyNames(MAKING_OBJECT));
+
+        // オブジェクトのプロトタイプを取得する
+        console.log(Object.getPrototypeOf(MAKING_OBJECT));
+
       </script>
 
   </body>
