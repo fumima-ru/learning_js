@@ -56,41 +56,35 @@
 
       <!--JavaScript------------------------>
       <script>
-        
-        // JavaScriptはプロトタイプベースのオブジェクト指向言語
+        const HEIGHT = 160;
+        const WEIGHT = 55;
 
-        /* プロトタイプベースのオブジェクト指向とは
-        ・既存のオブジェクトから新しいオブジェクトを生成するという考え方 */
+        // BMIを計算
+        // 数値の誤差やコードの長さを考えてBMI_4を採用予定
+        const BMI_1 = WEIGHT / ((HEIGHT / 100) * (HEIGHT / 100));
+        const BMI_2 = WEIGHT / ((HEIGHT * 0.01) * (HEIGHT * 0.01));
+        const BMI_3 = WEIGHT / (HEIGHT * 0.01) ** 2;
+        const BMI_4 = WEIGHT / (HEIGHT / 100) ** 2;
 
-        /* Object.prototype
-        ・ほぼ全てのオブジェクトが共有する基本的なプロトタイプオブジェクト
-        ・新しいオブジェクトを生成した際などに雛形のような役割もする */
+        // コンソールに値を出力
+        console.log(BMI_1.toFixed(2));
+        console.log(BMI_2.toFixed(2));
+        console.log(BMI_3.toFixed(2));
+        console.log(BMI_4.toFixed(2));
 
-        /* Object.getOwnPropertyNames()メソッド
-        ・指定されたオブジェクトの列挙可能なプロパティ名を配列で取得する
-        ・列挙可能なプロパティ・・・for_in文で取得できるプロパティ */
+        // 上記の値の型を確認
+        console.log(typeof(BMI_1.toFixed(2)));
+        console.log(typeof(BMI_2.toFixed(2)));
+        console.log(typeof(BMI_3.toFixed(2)));
+        console.log(typeof(BMI_4.toFixed(2)));
 
-        /* Object.getPrototypeOf()メソッド
-        ・指定したオブジェクトのプロトタイプを取得する
-        ・プロトタイプ・・・他のオブジェクトから継承されるプロパティやメソッドのセット */
+        // 【テスト】toFixed()メソッドによる四捨五入
+        const ROUND_TEST = 123.456789;
+        console.log(ROUND_TEST.toFixed(2));
 
-        // 新しいオブジェクトを生成
-        const MAKING_OBJECT = Object.create(Object.prototype);
-        
-        // 新しいオブジェクトに任意のプロパティを追加
-        MAKING_OBJECT.name = 'フミマール';
-        MAKING_OBJECT.address = '大阪市';
-
-        // 新しいオブジェクトのプロパティをコンソールに出力
-        console.log(MAKING_OBJECT.name);
-        console.log(MAKING_OBJECT.address);
-
-        // 列挙可能なプロパティ名を配列で取得する
-        console.log(Object.getOwnPropertyNames(MAKING_OBJECT));
-
-        // オブジェクトのプロトタイプを取得する
-        console.log(Object.getPrototypeOf(MAKING_OBJECT));
-
+        // 【テスト】toFixed()メソッド 指定した桁数未満の場合は0で埋められる
+        const LESS_THAN_SPECIFIED = 123.4;
+        console.log(LESS_THAN_SPECIFIED.toFixed(2));
       </script>
 
   </body>
