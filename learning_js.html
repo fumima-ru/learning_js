@@ -34,58 +34,58 @@
   <body>
 
     <!--#header---------------------------->
-    <header id="header">
-      <div class="logo">
-        <a href="#"></a>
-      </div>
+    <header id="header"> 
+        <a href="#">ヘッダー</a>
     </header>
 
-      <!--main----------------------------->
-      <main>
-        <div id="container-1">
-          <h1 id="heading-1"></h1>
-          <p id="paragraph-1"></p>
-          <button id="button-1">PUSH</button>
+    <!--#main----------------------------->
+    <main id="main">
+      <div class="wrapper">
+        <p><span>1</span>段落</p>
+        <p><span>2</span>段落</p>
+        <textarea name="name-element" id="" cols="30" rows="10"></textarea>
+        <div class="class">
+          <p>１個目のclass名がclassのクラス</p>
         </div>
-      </main>
-      
-      <!--#footer--------------------------->
-      <footer id="footer" class="wrapper">
-        <p class="copyright">&copy; fumima_ru</p>
-      </footer>
+        <div class="class">
+          <p>２個目のclass名がclassのクラス</p>
+        </div>
+      </div>
+    </main>
+    
+    <!--#footer--------------------------->
+    <footer id="footer">
+      <p class="copyright">&copy; フッターのコピーライト</p>
+    </footer>
 
-      <!--JavaScript------------------------>
-      <script>
-        const HEIGHT = 160;
-        const WEIGHT = 55;
+    <!--JavaScript------------------------>
+    <script>
 
-        // BMIを計算
-        // 数値の誤差やコードの長さを考えてBMI_4を採用予定
-        const BMI_1 = WEIGHT / ((HEIGHT / 100) * (HEIGHT / 100));
-        const BMI_2 = WEIGHT / ((HEIGHT * 0.01) * (HEIGHT * 0.01));
-        const BMI_3 = WEIGHT / (HEIGHT * 0.01) ** 2;
-        const BMI_4 = WEIGHT / (HEIGHT / 100) ** 2;
+      // id名を使用して要素を取得(一意)
+      const HEADER_ELEMENT = document.getElementById('header');
+      console.log(HEADER_ELEMENT);
 
-        // コンソールに値を出力
-        console.log(BMI_1.toFixed(2));
-        console.log(BMI_2.toFixed(2));
-        console.log(BMI_3.toFixed(2));
-        console.log(BMI_4.toFixed(2));
+      // クラス名を使用して要素を取得(複数)
+      const CLASS_ELEMENT = document.getElementsByClassName('class');
+      console.log(CLASS_ELEMENT);
 
-        // 上記の値の型を確認
-        console.log(typeof(BMI_1.toFixed(2)));
-        console.log(typeof(BMI_2.toFixed(2)));
-        console.log(typeof(BMI_3.toFixed(2)));
-        console.log(typeof(BMI_4.toFixed(2)));
+      // タグ名を使用して要素を取得(複数,NodeListを返す)
+      const SPAN_ELEMENT = document.getElementsByTagName('span');
+      console.log(SPAN_ELEMENT);
 
-        // 【テスト】toFixed()メソッドによる四捨五入
-        const ROUND_TEST = 123.456789;
-        console.log(ROUND_TEST.toFixed(2));
+      // name属性を使用して要素を取得(複数)
+      const NAME_ELEMENT = document.getElementsByName('name-element');
+      console.log(NAME_ELEMENT);
 
-        // 【テスト】toFixed()メソッド 指定した桁数未満の場合は0で埋められる
-        const LESS_THAN_SPECIFIED = 123.4;
-        console.log(LESS_THAN_SPECIFIED.toFixed(2));
-      </script>
+      // CSSセレクタを使用して要素を取得(一致する最初の要素のみ)
+      const SELECTOR_ELEMENT = document.querySelector('.class');
+      console.log(SELECTOR_ELEMENT);
+
+      // CSSセレクタを使用して要素を取得(複数)
+      const SELECTOR_ELEMENT_ALL = document.querySelectorAll('.class');
+      console.log(SELECTOR_ELEMENT_ALL);
+
+    </script>
 
   </body>
 </html>
