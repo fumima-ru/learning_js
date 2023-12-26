@@ -1,2 +1,2 @@
 # learning_js
-jsの学習用ディレクトリです。
+htmlやcss、JavaScriptの学習内容をバージョン管理しています。
