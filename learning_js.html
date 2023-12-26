@@ -35,56 +35,53 @@
 
     <!--#header---------------------------->
     <header id="header"> 
-        <a href="#">ヘッダー</a>
+        <a href="#"></a>
     </header>
 
     <!--#main----------------------------->
     <main id="main">
-      <div class="wrapper">
-        <p><span>1</span>段落</p>
-        <p><span>2</span>段落</p>
-        <textarea name="name-element" id="" cols="30" rows="10"></textarea>
-        <div class="class">
-          <p>１個目のclass名がclassのクラス</p>
-        </div>
-        <div class="class">
-          <p>２個目のclass名がclassのクラス</p>
-        </div>
-      </div>
+      <div id="title">タイトル</div>
+
+      <input id="input" type="text"><br>
+
+      <button id="button" type="button">onclick</button>
+
+      <p id="paragraph1">style</p>
+
+      <p id="paragraph2">テキストコンテンツ</p>
     </main>
-    
+
     <!--#footer--------------------------->
     <footer id="footer">
-      <p class="copyright">&copy; フッターのコピーライト</p>
+      <p class="copyright"></p>
     </footer>
 
     <!--JavaScript------------------------>
     <script>
+      // innerHTMLプロパティ
+      // 置き換えられる内容によってはセキュリティ上のリスクを伴うので注意
+      const TITLE_ELEMENT = document.getElementById('title');
+      TITLE_ELEMENT.innerHTML = '<div id="title">innerHTML</div>';
 
-      // id名を使用して要素を取得(一意)
-      const HEADER_ELEMENT = document.getElementById('header');
-      console.log(HEADER_ELEMENT);
+      // valueプロパティ
+      const INPUT_ELEMENT = document.getElementById('input');
+      INPUT_ELEMENT.value = 'value';
 
-      // クラス名を使用して要素を取得(複数)
-      const CLASS_ELEMENT = document.getElementsByClassName('class');
-      console.log(CLASS_ELEMENT);
+      // onclickプロパティ
+      // 機能するがaddEventListenerメソッドを使用することが推奨されている
+      const BUTTON_ELEMENT = document.getElementById('button');
+      BUTTON_ELEMENT.onclick = function() {
+        console.log('ボタンがクリックされました');
+      };
 
-      // タグ名を使用して要素を取得(複数,NodeListを返す)
-      const SPAN_ELEMENT = document.getElementsByTagName('span');
-      console.log(SPAN_ELEMENT);
+      // styleプロパティ
+      const PARAGRAPH_1 = document.getElementById('paragraph1');
+      PARAGRAPH_1.style.backgroundColor = 'blue';
+      PARAGRAPH_1.style.opacity = 0.5;
 
-      // name属性を使用して要素を取得(複数)
-      const NAME_ELEMENT = document.getElementsByName('name-element');
-      console.log(NAME_ELEMENT);
-
-      // CSSセレクタを使用して要素を取得(一致する最初の要素のみ)
-      const SELECTOR_ELEMENT = document.querySelector('.class');
-      console.log(SELECTOR_ELEMENT);
-
-      // CSSセレクタを使用して要素を取得(複数)
-      const SELECTOR_ELEMENT_ALL = document.querySelectorAll('.class');
-      console.log(SELECTOR_ELEMENT_ALL);
-
+      // textContentプロパティ
+      const PARAGRAPH_2 = document.getElementById('paragraph2');
+      PARAGRAPH_2.textContent = 'textContent';
     </script>
 
   </body>
