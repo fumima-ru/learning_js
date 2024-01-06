@@ -40,15 +40,13 @@
 
     <!--#main----------------------------->
     <main id="main">
-      <div id="title">タイトル</div>
+      
+      <!-- strongタグ -->
+      <strong>重要</strong>
 
-      <input id="input" type="text"><br>
+      <!--bタグ -->
+      <b>太字</b>
 
-      <button id="button" type="button">onclick</button>
-
-      <p id="paragraph1">style</p>
-
-      <p id="paragraph2">テキストコンテンツ</p>
     </main>
 
     <!--#footer--------------------------->
@@ -58,30 +56,7 @@
 
     <!--JavaScript------------------------>
     <script>
-      // innerHTMLプロパティ
-      // 置き換えられる内容によってはセキュリティ上のリスクを伴うので注意
-      const TITLE_ELEMENT = document.getElementById('title');
-      TITLE_ELEMENT.innerHTML = '<div id="title">innerHTML</div>';
-
-      // valueプロパティ
-      const INPUT_ELEMENT = document.getElementById('input');
-      INPUT_ELEMENT.value = 'value';
-
-      // onclickプロパティ
-      // 機能するがaddEventListenerメソッドを使用することが推奨されている
-      const BUTTON_ELEMENT = document.getElementById('button');
-      BUTTON_ELEMENT.onclick = function() {
-        console.log('ボタンがクリックされました');
-      };
-
-      // styleプロパティ
-      const PARAGRAPH_1 = document.getElementById('paragraph1');
-      PARAGRAPH_1.style.backgroundColor = 'blue';
-      PARAGRAPH_1.style.opacity = 0.5;
-
-      // textContentプロパティ
-      const PARAGRAPH_2 = document.getElementById('paragraph2');
-      PARAGRAPH_2.textContent = 'textContent';
+      
     </script>
 
   </body>
