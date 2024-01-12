@@ -38,27 +38,53 @@
         <a href="#"></a>
     </header>
 
-    <!--#main----------------------------->
-    <main id="main">
-
-    </main>
-
     <!--#footer--------------------------->
     <footer id="footer">
       <p class="copyright"></p>
     </footer>
 
+    <!--#main----------------------------->
+    <main id="main">
+
+      <div id="click_area">
+        <button type="button" id="click_button">ボタン</button>
+        <p></p>
+      </div>
+
+      <div id="change_area">
+        <input type="text" id="input_1" value="値">
+        <p></p>
+      </div>
+
+      <div id="input_area">
+        <input type="text" id="input_2">
+        <p></p>
+      </div>
+      
+    </main>
+
     <!--JavaScript------------------------>
     <script>
 
-      // toUpperCase( )メソッド
-      const STRING_1 = 'abcdefg';
-      console.log(STRING_1.toUpperCase());
+      document.addEventListener('DOMContentLoaded', function() {
 
-      // toLowerCase( )メソッド
-      const STRING_2 = 'ABCDEFG';
-      console.log(STRING_2.toLowerCase());
+        // clickイベント
+        document.getElementById('click_button').addEventListener('click', function(event) {
+          document.querySelector('#click_area > p').textContent = 'ボタンが押されました';
+        });
 
+        // changeイベント
+        document.getElementById('input_1').addEventListener('change', function(event) {
+          document.querySelector('#change_area > p').textContent = '値が変更されました';
+        });
+
+        // inputイベント
+        document.getElementById('input_2').addEventListener('input', function(event) {
+          document.querySelector('#input_area > p').textContent = '値が入力されました';
+        });
+
+      });
+      
     </script>
 
   </body>
