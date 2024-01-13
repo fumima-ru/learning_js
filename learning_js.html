@@ -45,46 +45,34 @@
 
     <!--#main----------------------------->
     <main id="main">
-
       <div id="click_area">
-        <button type="button" id="click_button">ボタン</button>
-        <p></p>
-      </div>
+        <button type="button" id="click_button_1">ボタン１</button>
+        <p class="p_1"></p>
 
-      <div id="change_area">
-        <input type="text" id="input_1" value="値">
-        <p></p>
+        <button type="button" id="click_button_2">ボタン２</button>
+        <p class="p_2"></p>
       </div>
-
-      <div id="input_area">
-        <input type="text" id="input_2">
-        <p></p>
-      </div>
-      
     </main>
 
     <!--JavaScript------------------------>
     <script>
-
       document.addEventListener('DOMContentLoaded', function() {
 
-        // clickイベント
-        document.getElementById('click_button').addEventListener('click', function(event) {
-          document.querySelector('#click_area > p').textContent = 'ボタンが押されました';
+        // 無名関数
+        document.getElementById('click_button_1').addEventListener('click', function() {
+          document.querySelector('#click_area > .p_1').textContent = 'ボタン１が押されました';
         });
 
-        // changeイベント
-        document.getElementById('input_1').addEventListener('change', function(event) {
-          document.querySelector('#change_area > p').textContent = '値が変更されました';
-        });
+        // 名前付き関数
+        const BUTTON_ELEMENT_2 = document.getElementById('click_button_2');
+        
+        function button() {
+          document.querySelector('#click_area > .p_2').textContent = 'ボタン２が押されました';
+        }
 
-        // inputイベント
-        document.getElementById('input_2').addEventListener('input', function(event) {
-          document.querySelector('#input_area > p').textContent = '値が入力されました';
-        });
-
+        BUTTON_ELEMENT_2.addEventListener('click', button);
+        
       });
-      
     </script>
 
   </body>
