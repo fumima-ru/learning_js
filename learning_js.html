@@ -53,22 +53,24 @@
 
     <!--JavaScript------------------------>
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
+      // 半角スペース
+      const TEXT_1 = ' リラックマ ';
+      console.log(TEXT_1);
+      console.log(TEXT_1.trim());
+      
+      // タブ
+      const TEXT_2 = '  コリラックマ  ';
+      console.log(TEXT_2);
+      console.log(TEXT_2.trim());
 
-        // イベントターゲットを定数に格納
-        const BUTTON_ELEMENT = document.getElementById('click_button');
+      const TEXT_3 = '\tチャイロイコグマ\t';
+      console.log(TEXT_3);
+      console.log(TEXT_3.trim());
 
-        // イベントハンドラを定義
-        function button() {
-          document.querySelector('#button_area > p').textContent = 'ボタンが押されました';
-        }
-
-        // addEventListener()メソッドで
-        // イベントリスナーにclickイベントとイベントハンドラのbutton関数を登録
-        BUTTON_ELEMENT.addEventListener('click', button);
-        
-      });
+      // 改行
+      const TEXT_4 = '\nキイロイトリ\n';
+      console.log(TEXT_4);
+      console.log(TEXT_4.trim());
     </script>
-
   </body>
 </html>
