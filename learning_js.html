@@ -53,24 +53,21 @@
 
     <!--JavaScript------------------------>
     <script>
-      // 半角スペース
-      const TEXT_1 = ' リラックマ ';
-      console.log(TEXT_1);
-      console.log(TEXT_1.trim());
-      
-      // タブ
-      const TEXT_2 = '  コリラックマ  ';
-      console.log(TEXT_2);
-      console.log(TEXT_2.trim());
+      // 配列の値にtrim()メソッドを使用する
+      const ARRAY = [' a ', 'b\t', '\nc\n'];
 
-      const TEXT_3 = '\tチャイロイコグマ\t';
-      console.log(TEXT_3);
-      console.log(TEXT_3.trim());
+      const TRIMMED_ARRAY = ARRAY.map(arrayElement => arrayElement.trim());
+      console.log(TRIMMED_ARRAY);
 
-      // 改行
-      const TEXT_4 = '\nキイロイトリ\n';
-      console.log(TEXT_4);
-      console.log(TEXT_4.trim());
+      // map()メソッドの第一引数と第二引数をコンソールに出力
+      const NUMBERS = [1, 2, 3, 4, 5];
+
+      const ELEMENT_AND_INDEX = NUMBERS.map((currentElement, currentIndex) => {
+          return `第一引数(要素)：${currentElement}  第二引数(インデックス番号)：${currentIndex}`;
+      });
+
+      console.log(ELEMENT_AND_INDEX);
     </script>
+
   </body>
 </html>
