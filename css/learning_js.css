@@ -7,8 +7,15 @@ html {
 body {
   color: #050507;
   font-size: 1rem;
-  /*font-family: ;*/
+  /* \が¥に文字化けしないよう英語フォントを選択 */
+  font-family: Arial;
 }
+
+pre {
+  /* \が¥に文字化けしないよう英語フォントを選択 */
+  font-family: Arial;
+}
+
 img {
   max-width: 100%;
 }
@@ -24,7 +31,7 @@ a {
 
 main {
   margin: 10px 20px 50px 20px;
-  text-align: center;
+  /* text-align: center; */
   max-width: 300px;
 }
 
