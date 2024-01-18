@@ -45,36 +45,34 @@
 
     <!--#main----------------------------->
     <main id="main">
-      <div class="single-quote"></div><br>
-      <div class="double-quote"></div><br>
-      <div class="backquote"></div><br>
-      <div class="backslash"></div><br>
-      <div class="horizontal-tab"></div><br>
-      <div class="line-feed"></div><br>
+      
+      <!-- htmlのpreタグ -->
+      <pre>
+        htmlの
+        preタグを使用
+      </pre>
+
+      <!-- cssのwhite-space: pre; -->
+      <style>
+        .preformatted-text {
+          white-space: pre;
+        }
+      </style>
+      
+      <div>
+        <p>通常のテキスト</p>
+        <span class="preformatted-text">
+          この&lt;span&gt;タグには
+            cssのwhite-space: pre;を
+              適用しています
+        </span>
+        <p>通常のテキスト</p>
+      </div>
+
     </main>
 
-    <!--JavaScript----エスケープシーケンス-------------------->
-    <script>
-
-      const SINGLE_QUOTE_ELEMENT = document.getElementsByClassName('single-quote')[0];
-      SINGLE_QUOTE_ELEMENT.textContent = 'シングルクォート【\\\'】';
-
-      const DOUBLE_QUOTE_ELEMENT = document.getElementsByClassName('double-quote')[0];
-      DOUBLE_QUOTE_ELEMENT.textContent = "ダブルクォート【\\\"】";
-
-      const BACKQUOTE_ELEMENT = document.getElementsByClassName('backquote')[0];
-      BACKQUOTE_ELEMENT.textContent = `バッククォート【\\\`】`;
-
-      const BACKSLASH_ELEMENT = document.getElementsByClassName('backslash')[0];
-      BACKSLASH_ELEMENT.textContent = 'バックスラッシュ【\\\\】';
-
-      // preタグを使用してスペースを全て表示
-      const HORIZONTAL_TAB_ELEMENT = document.getElementsByClassName('horizontal-tab')[0];
-      HORIZONTAL_TAB_ELEMENT.innerHTML = '<pre>水平タブ【\\t】<br>  →\t←→\t\t\t←</pre>';
-
-      // preタグを使用してスペースを全て表示
-      const LINE_FEED_ELEMENT = document.getElementsByClassName('line-feed')[0];
-      LINE_FEED_ELEMENT.innerHTML = '<pre>改行【\\n】<br>  改行列\n  改行後の列</pre>';
+    <!--JavaScript------------------------>
+    <script>  
 
     </script>
 
