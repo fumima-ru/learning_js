@@ -83,23 +83,41 @@ button:hover {
   position: relative;
 }
 
-.move_1 {
-  animation: move_1 2s infinite;
+/* move */
+.move_right_step {
+  animation: move 5s steps(5, jump-end) forwards;
 }
-
-.move_2 {
-  animation: move_2 2s infinite;
-}
-
-/* to(100%)指定 */
-@keyframes move_1 {
+@keyframes move {
+  from { left: 0; }
   to { left: 100px; }
 }
 
-/* from(0%)とto(100%)指定 */
-@keyframes move_2 {
-  from { left: 0;}
-  to { left: 100px;}
+/* color ※中間色が入っています */
+.color_transition_step {
+  animation: color 3s steps(5, jump-end) 2;
+}
+@keyframes color {
+  0% { background-color: gray; }
+  50% { background-color: pink; }
+  100% { background-color: orange;}
+}
+
+/* fade */
+.fade_animation_step {
+  animation: fade 5s steps(5, jump-start);
+}
+@keyframes fade {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+/* expand_reverse */
+.expand_reverse_step {
+  animation: expand 5s steps(5, jump-end) reverse;
+}
+@keyframes expand {
+  from { width: 100px; }
+  to {width: 200px;}
 }
 
 /* --#header----------------------- */
