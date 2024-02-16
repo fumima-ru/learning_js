@@ -75,49 +75,26 @@ button:hover {
 }
 
 /* css */
-.square {
-  width: 100px;
-  height: 100px;
-  margin: 30px;
+.ball {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
   background-color: gray;
   position: relative;
 }
 
-/* step_start */
-.step_start {
-  animation: step_start_animation 2s step-start forwards;
+.ball {
+  animation: move_up 1s linear infinite alternate, move_right 10s linear infinite alternate;
 }
 
-@keyframes step_start_animation {
-  0% { transform: translateX(0); }
-  25% { transform: translateX(50px); }
-  50% { transform: translateX(100px); }
-  75% { transform: translateX(150px); }
-  100% { transform: translateX(200px); }
+@keyframes move_up {
+  from { top: 10px; }
+  to { top: 100px; }
 }
 
-/* step_end */
-.step_end {
-  animation: step_end_animation 2s step-end forwards;
-}
-
-@keyframes step_end_animation {
-  0% { transform: translateX(0); }
-  25% { transform: translateX(50px); }
-  50% { transform: translateX(100px); }
-  75% { transform: translateX(150px); }
-  100% { transform: translateX(200px); }
-}
-
-/* step_test */
-/* step_endと同じ挙動 endをstartに置き換えるとstep_startと同じ挙動になる */
-.step_test {
-  animation: step_test_animation 2s steps(4, end) forwards;
-}
-
-@keyframes step_test_animation {
-  from { transform: translateX(0); }
-  to { transform: translateX(200px); }
+@keyframes move_right {
+  from { left: 0; }
+  to { left: 300px; }
 }
 
 
