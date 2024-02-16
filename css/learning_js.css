@@ -83,42 +83,43 @@ button:hover {
   position: relative;
 }
 
-/* move */
-.move_right_step {
-  animation: move 5s steps(5, jump-end) forwards;
-}
-@keyframes move {
-  from { left: 0; }
-  to { left: 100px; }
+/* step_start */
+.step_start {
+  animation: step_start_animation 2s step-start forwards;
 }
 
-/* color ※中間色が入っています */
-.color_transition_step {
-  animation: color 3s steps(5, jump-end) 2;
-}
-@keyframes color {
-  0% { background-color: gray; }
-  50% { background-color: pink; }
-  100% { background-color: orange;}
+@keyframes step_start_animation {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(50px); }
+  50% { transform: translateX(100px); }
+  75% { transform: translateX(150px); }
+  100% { transform: translateX(200px); }
 }
 
-/* fade */
-.fade_animation_step {
-  animation: fade 5s steps(5, jump-start);
-}
-@keyframes fade {
-  from { opacity: 1; }
-  to { opacity: 0; }
+/* step_end */
+.step_end {
+  animation: step_end_animation 2s step-end forwards;
 }
 
-/* expand_reverse */
-.expand_reverse_step {
-  animation: expand 5s steps(5, jump-end) reverse;
+@keyframes step_end_animation {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(50px); }
+  50% { transform: translateX(100px); }
+  75% { transform: translateX(150px); }
+  100% { transform: translateX(200px); }
 }
-@keyframes expand {
-  from { width: 100px; }
-  to {width: 200px;}
+
+/* step_test */
+/* step_endと同じ挙動 endをstartに置き換えるとstep_startと同じ挙動になる */
+.step_test {
+  animation: step_test_animation 2s steps(4, end) forwards;
 }
+
+@keyframes step_test_animation {
+  from { transform: translateX(0); }
+  to { transform: translateX(200px); }
+}
+
 
 /* --#header----------------------- */
 /* --ハンバーガーメニュー------------ */
