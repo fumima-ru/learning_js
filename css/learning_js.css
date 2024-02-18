@@ -75,29 +75,28 @@ button:hover {
 }
 
 /* css */
-.ball {
+.square {
   width: 30px;
   height: 30px;
-  border-radius: 50%;
   background-color: gray;
-  position: relative;
+  /* .square要素の変化に伴うアニメーションをtransformプロパティに指定 */
+  transition: transform 1s ease-in-out;
 }
 
-.ball {
-  animation: move_up 1s linear infinite alternate, move_right 10s linear infinite alternate;
+.square:hover {
+  /* .squareは要素 */
+  /* transformはcssプロパティ */
+  /* translate()関数はtransformプロパティの値 | translate(X軸, Y軸); */
+  transform: translate(50px, 50px);
 }
 
-@keyframes move_up {
-  from { top: 10px; }
-  to { top: 100px; }
-}
 
-@keyframes move_right {
+/* @keyframes move_right {
   from { left: 0; }
   to { left: 300px; }
-}
+} */
 
-
+/* position: relative; */
 /* --#header----------------------- */
 /* --ハンバーガーメニュー------------ */
 /* --#mainvisual------------------- */
