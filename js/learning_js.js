@@ -1,15 +1,14 @@
-// 一般的なエラーの種類
+// エラーの構成要素
+function outerFunction() {
+  middleFunction();
+}
 
-// 参照エラー (ReferenceError)
-console.log(a); /* aが未定義 */
+function middleFunction() {
+  innerFunction();
+}
 
-// 型エラー (TypeError)
-let b = null;
-b.toUpperCase(); /* toUpperCase()メソッドにnullを渡す */
+function innerFunction() {
+  console.log(variable); // variableは未定義(ReferenceError)
+}
 
-// 構文エラー (SyntaxError)
-console.log('c'; /* 括弧が閉じられていない */
-
-// 範囲エラー (RangeError)
-let number = 123.456;
-let result = number.toFixed(-2); /* toFixed()メソッドに負の値を渡す */
+outerFunction();
