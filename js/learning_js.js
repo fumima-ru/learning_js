@@ -1,14 +1,6 @@
-// エラーの構成要素
-function outerFunction() {
-  middleFunction();
-}
+// エラー発生箇所の特定
+let alphabet = 'g';
+console.log(alhabet);
 
-function middleFunction() {
-  innerFunction();
-}
-
-function innerFunction() {
-  console.log(variable); // variableは未定義(ReferenceError)
-}
-
-outerFunction();
+// デベロッパーツールでエラー発生箇所を確認
+// VSCode Ctrl + G (行:列に移動するショートカットキー)
