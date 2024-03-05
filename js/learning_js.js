@@ -1,7 +1,12 @@
 // プリントデバッグ
+console.time('処理時間');
 
-console.error('データベースへの接続に失敗しました。');
 
-console.warn('データが不完全です。処理を続行しますが、正確性が保証されません。');
+for (let i = 0; i < 100000; i++) {
+    if (i % 10000 === 0) {
+        console.timeLog('処理時間', i);
+    }
+}
 
-console.info('ユーザーがログインしました。');
+console.timeEnd('処理時間');
+console.log('処理が完了しました。');
