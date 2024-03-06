@@ -1,11 +1,10 @@
 // プリントデバッグ
-// console.assert( )メソッド
+// console.table( )メソッド
 
-// false
-let username = '';
-console.assert(username, 'ユーザー名が入力されていません');
+// オブジェクト
+const OSAKA = {food: 'たこ焼き', amusementPark: 'USJ', sightseeingSpot: 'グリコの看板'};
+console.table(OSAKA);
 
-// true
-let x = 10;
-let y = 1;
-console.assert(x > y, 'xはyより長い必要があります');
+// 配列
+const CHARACTER = ['リラックマ', 'コリラックマ', 'キイロイトリ', 'チャイロイコグマ'];
+console.table(CHARACTER);
