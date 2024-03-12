@@ -1,12 +1,14 @@
 // プリントデバッグ
-
+////////////////////////////////////////////////////////////////////////
 // sort( )メソッド
 const MEMBERS_LAST_NAME = [
   'サトウ', 'スズキ', 'タカハシ', 'タナカ', 'ワタナベ', 'イトウ', 'ヤマモト'
 ];
 console.log(MEMBERS_LAST_NAME.sort());
 
+////////////////////////////////////////////////////////////////////////
 // sort( )メソッドに比較関数を指定する
+
 // 昇順
 const NUMBERS_ASC = [5, 2, 9, 1, 7];
 NUMBERS_ASC.sort((a, b) => a - b);
@@ -16,12 +18,34 @@ const NUMBERS_DES = [5, 2, 9, 1, 7];
 NUMBERS_DES.sort((a, b) => b - a);
 console.log(NUMBERS_DES);
 
+////////////////////////////////////////////////////////////////////////
 // sort( )メソッドは破壊的メソッド(元の配列が変更される)
 const ORIGIN_ARRAY = [3, 1, 2];
 console.log('ソート前：', ORIGIN_ARRAY);
 
 ORIGIN_ARRAY.sort();
 console.log('ソート後：', ORIGIN_ARRAY);
+
+////////////////////////////////////////////////////////////////////////
+// sort( )メソッドを使用する際のソート前の配列のコピーの作成と管理
+
+// スプレッド演算子を使用する
+const ORIGIN_ARRAY_2 = [3, 1, 2];
+const SPREAD_OPERATOR_ARRAY = [...ORIGIN_ARRAY_2];
+
+ORIGIN_ARRAY_2.sort(); // ソートする
+
+console.log(ORIGIN_ARRAY_2);
+console.log(SPREAD_OPERATOR_ARRAY);
+
+// slice( )メソッドを使用する
+const ORIGIN_ARRAY_3 = [3, 1, 2];
+const SLICE_METHOD_ARRAY = ORIGIN_ARRAY_3.slice();
+
+ORIGIN_ARRAY_3.sort(); // ソートする
+
+console.log(ORIGIN_ARRAY_3);
+console.log(SLICE_METHOD_ARRAY);
 
 
 
