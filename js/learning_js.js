@@ -11,11 +11,18 @@ console.log(MEMBERS_LAST_NAME.sort());
 const NUMBERS_ASC = [5, 2, 9, 1, 7];
 NUMBERS_ASC.sort((a, b) => a - b);
 console.log(NUMBERS_ASC);
-
 // 降順
 const NUMBERS_DES = [5, 2, 9, 1, 7];
 NUMBERS_DES.sort((a, b) => b - a);
 console.log(NUMBERS_DES);
+
+// sort( )メソッドは破壊的メソッド(元の配列が変更される)
+const ORIGIN_ARRAY = [3, 1, 2];
+console.log('ソート前：', ORIGIN_ARRAY);
+
+ORIGIN_ARRAY.sort();
+console.log('ソート後：', ORIGIN_ARRAY);
+
 
 
 // ※下記のコードを細分化して学んでいますが下記のコードに間違いがあれば都度、修正します
