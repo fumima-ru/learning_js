@@ -47,6 +47,20 @@ ORIGIN_ARRAY_3.sort(); // ソートする
 console.log(ORIGIN_ARRAY_3);
 console.log(SLICE_METHOD_ARRAY);
 
+////////////////////////////////////////////////////////////////////////
+/* 下記のコードでは 比較関数にlocaleCompare( )メソッドを指定し 並べ替えと繰り返しをsort( )メソッドが行っている */
+
+// 文字列の配列 sort( )メソッド localeCompare( )メソッド
+
+// 昇順
+const STRINGS_ARRAY_ASC = ['バナナ', 'リンゴ', 'ミカン'];
+STRINGS_ARRAY_ASC.sort((a, b) => a.localeCompare(b));
+console.log(STRINGS_ARRAY_ASC);
+
+// 降順
+const STRINGS_ARRAY_DES = ['バナナ', 'リンゴ', 'ミカン'];
+STRINGS_ARRAY_DES.sort((a, b) => b.localeCompare(a));
+console.log(STRINGS_ARRAY_DES);
 
 
 // ※下記のコードを細分化して学んでいますが下記のコードに間違いがあれば都度、修正します
@@ -77,6 +91,6 @@ console.log(RANDOM_ARRAY); */
 
 // 使用例
 /* const TARGET = 22; // 探す値
-console.log("ランダムな配列:", RANDOM_ARRAY);
-console.log("探す値:", TARGET);
+console.log('ランダムな配列:', RANDOM_ARRAY);
+console.log('探す値:', TARGET);
 console.log(binarySearch(RANDOM_ARRAY, TARGET)); */
