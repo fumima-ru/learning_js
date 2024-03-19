@@ -10,6 +10,18 @@ const SIBLINGS = [
 SIBLINGS.sort((a, b) => a.age - b.age);
 console.log(SIBLINGS);
 
+////////////////////////////////////////////////////////////////////////
+// try-catch文
+try {
+  // 未定義の関数を呼び出し故意にエラーを発生させる
+  undefinedFunction();
+} catch (error) {
+  // エラーをcatchした場合の処理
+  console.error('エラーが発生しました:', error.message);
+}
+
+console.log('エラー発生後も処理が続行される');
+
 // ※下記のコードを細分化して学んでいますが下記のコードに間違いがあれば都度、修正します
 
 // 2桁のランダムな数値の配列を生成
