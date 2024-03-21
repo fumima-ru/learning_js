@@ -22,6 +22,41 @@ try {
 
 console.log('エラー発生後も処理が続行される');
 
+////////////////////////////////////////////////////////////////////////
+// try-catch文とthrow文
+function validateAge(age) {
+  if (typeof age !== 'number' || age < 0) {
+    throw new Error('正しい年齢を入力してください');
+  }
+  return '承認されました';
+}
+
+try {
+  console.log(validateAge(-15));
+} catch (error) {
+  console.error('エラーが発生しました:', error.message);
+}
+
+try {
+  console.log(validateAge(十五));
+} catch (error) {
+  console.error('エラーが発生しました:', error.message);
+}
+
+try {
+  console.log(validateAge('十五'));
+} catch (error) {
+  console.error('エラーが発生しました:', error.message);
+}
+
+try {
+  console.log(validateAge(15));
+} catch (error) {
+  console.error('エラーが発生しました:', error.message);
+}
+
+
+
 // ※下記のコードを細分化して学んでいますが下記のコードに間違いがあれば都度、修正します
 
 // 2桁のランダムな数値の配列を生成
