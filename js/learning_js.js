@@ -23,7 +23,7 @@ try {
 console.log('エラー発生後も処理が続行される');
 
 ////////////////////////////////////////////////////////////////////////
-// try-catch文とthrow文
+// throw文とtry-catch文
 function validateAge(age) {
   if (typeof age !== 'number' || age < 0) {
     throw new Error('正しい年齢を入力してください');
@@ -55,6 +55,40 @@ try {
   console.error('エラーが発生しました:', error.message);
 }
 
+////////////////////////////////////////////////////////////////////////
+// try-catch-finally文　finallyブロック
+
+// 例外を発生させない
+function withoutException() {
+  return "withoutExceptionは例外が発生する関数ではありません";
+}
+
+// 例外を発生させる
+function withException() {
+  throw new Error("withExceptionは例外を発生させる関数です");
+}
+
+// 例外を発生させない関数を試す
+try {
+  let withoutExceptionReturnvalue = withoutException();
+  console.log("withoutExceptionのtryブロック:", withoutExceptionReturnvalue);
+} catch (error) {
+  console.error("withoutExceptionのcatchブロック:", error.message);
+} finally {
+  console.log("withoutExceptionのfinallyブロック: 例外発生の有無にかかわらず処理を行う");
+}
+
+// 例外を発生させる関数を試す
+try {
+  let withExceptionReturnvalue = withException();
+  console.log("withExceptionのtryブロック:", withExceptionReturnvalue);
+} catch (error) {
+  console.error("withExceptionのcatchブロック:", error.message);
+} finally {
+  console.log("withExceptionのfinallyブロック: 例外発生の有無にかかわらず処理を行う");
+}
+
+console.log('エラー発生後も処理は続行されています');
 
 
 // ※下記のコードを細分化して学んでいますが下記のコードに間違いがあれば都度、修正します
